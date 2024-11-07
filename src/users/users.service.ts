@@ -7,7 +7,8 @@ export class UsersService {
   constructor(private prisma: PrismaService) {}
 
   async getAllUsers(): Promise<User[]> {
-    return this.prisma.user.findMany();
+    const result = await this.prisma.user.findMany();
+    return result;
   }
 
   // Add more user-related methods (e.g., createUser, findUserById)

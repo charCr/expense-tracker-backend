@@ -1,10 +1,9 @@
-import { Resolver, Query } from '@nestjs/graphql';
+import { Resolver, Query, ObjectType, Field, Int } from '@nestjs/graphql';
 import { UsersService } from './users.service';
 import { User } from '@prisma/client';
-import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 @ObjectType()
-class UserType {
+export class UserType {
   @Field(() => Int)
   id: number;
 
@@ -20,6 +19,7 @@ export class UsersResolver {
 
   @Query(() => [UserType])
   async users(): Promise<User[]> {
-    return this.usersService.getAllUsers();
+    const result = await this.usersService.getAllUsers();
+    return result;
   }
 }

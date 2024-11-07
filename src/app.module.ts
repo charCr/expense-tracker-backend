@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { HelloResolver } from './resolvers/hello.resolver';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 import { ExpensesModule } from './expenses/expenses.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -19,8 +19,9 @@ import { ExpensesModule } from './expenses/expenses.module';
     }),
     UsersModule,
     ExpensesModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
-  providers: [AppService, HelloResolver],
+  providers: [AppService],
 })
 export class AppModule {}
