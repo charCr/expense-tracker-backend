@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    container_name: expense-tracker-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: carlos22@
+      POSTGRES_DB: expense_tracker
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - expense-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: expense-tracker-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: char.cr1204@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: carlos22@
+    ports:
+      - '8080:80'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - expense-network
+    depends_on:
+      - db
+
+volumes:
+  db-data:
+  pgadmin-data:
+
+networks:
+  expense-network:
+    driver: bridge
