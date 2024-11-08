@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: carlos22@
+      POSTGRES_PASSWORD: carlos22
       POSTGRES_DB: expense_tracker
     ports:
       - '5432:5432'

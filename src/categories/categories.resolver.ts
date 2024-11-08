@@ -14,7 +14,7 @@ export class CategoryType {
   @Field({ nullable: true })
   description?: string;
 
-  @Field(() => [ExpenseType])
+  @Field(() => [ExpenseType], { nullable: true })
   expenses: ExpenseType[];
 
   //   @Field(() => [BudgetType])

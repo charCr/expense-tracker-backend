@@ -11,7 +11,7 @@ type CategoryType {
   id: Int!
   name: String!
   description: String
-  expenses: [ExpenseType!]!
+  expenses: [ExpenseType!]
 }
 
 type ExpenseType {
@@ -32,8 +32,21 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type BudgetType {
+  id: Int!
+  amount: Float!
+  period: String!
+  categoryId: Int!
+  userId: Int!
+  category: CategoryType!
+  user: UserType!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
 type Query {
   users: [UserType!]!
   expenses: [ExpenseType!]!
   categories: [CategoryType!]!
+  budgets: [BudgetType!]!
 }
