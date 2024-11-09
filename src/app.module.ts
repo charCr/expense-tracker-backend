@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { ExpensesModule } from './expenses/expenses.module';
 import { CategoriesModule } from './categories/categories.module';
 import { BudgetsModule } from './budgets/budgets.module';
+import { TagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { BudgetsModule } from './budgets/budgets.module';
     ExpensesModule,
     CategoriesModule,
     BudgetsModule,
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

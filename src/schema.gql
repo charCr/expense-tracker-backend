@@ -44,9 +44,16 @@ type BudgetType {
   updatedAt: DateTime!
 }
 
+type TagType {
+  id: Int!
+  name: String!
+  expenses: [ExpenseType!]!
+}
+
 type Query {
   users: [UserType!]!
   expenses: [ExpenseType!]!
   categories: [CategoryType!]!
   budgets: [BudgetType!]!
+  tags: [TagType!]!
 }

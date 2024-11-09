@@ -15,7 +15,7 @@ export class UserType {
 
 @Resolver(() => UserType)
 export class UsersResolver {
-  constructor(private usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) {}
 
   @Query(() => [UserType])
   async users(): Promise<User[]> {
