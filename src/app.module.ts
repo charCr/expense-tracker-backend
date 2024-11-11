@@ -10,6 +10,7 @@ import { ExpensesModule } from './expenses/expenses.module';
 import { CategoriesModule } from './categories/categories.module';
 import { BudgetsModule } from './budgets/budgets.module';
 import { TagsModule } from './tags/tags.module';
+import { RecurringExpensesModule } from './recurring-expenses/recurring-expenses.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { TagsModule } from './tags/tags.module';
     CategoriesModule,
     BudgetsModule,
     TagsModule,
+    RecurringExpensesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -50,10 +50,25 @@ type TagType {
   expenses: [ExpenseType!]!
 }
 
+type RecurringExpenseType {
+  id: Int!
+  amount: Float!
+  description: String
+  frequency: String!
+  nextDueDate: DateTime!
+  categoryId: Int!
+  userId: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  category: CategoryType!
+  user: UserType!
+}
+
 type Query {
   users: [UserType!]!
   expenses: [ExpenseType!]!
   categories: [CategoryType!]!
   budgets: [BudgetType!]!
   tags: [TagType!]!
+  recurringExpenses: [RecurringExpenseType!]!
 }
