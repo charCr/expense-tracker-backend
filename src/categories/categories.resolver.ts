@@ -26,7 +26,7 @@ export class CategoryType {
 
 @Resolver(() => CategoryType)
 export class CategoriesResolver {
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(private readonly categoriesService: CategoriesService) {}
 
   @Query(() => [CategoryType])
   async categories(): Promise<Category[]> {

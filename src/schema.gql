@@ -72,3 +72,7 @@ type Query {
   tags: [TagType!]!
   recurringExpenses: [RecurringExpenseType!]!
 }
+
+type Mutation {
+  createExpense(userId: Int!, categoryId: Int!, amount: Float!, description: String, date: DateTime): ExpenseType!
+}
